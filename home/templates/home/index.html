@@ -1,0 +1,1591 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kherapati Sarkar Group Of Colleges</title>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         HEADER / NAVBAR
+    ====================================================== -->
+
+    <header class="header">
+
+        <div class="container nav-container">
+
+            <!-- LOGO -->
+            <a href="{% url 'home' %}" class="logo">
+
+                <div class="logo-circle">
+                    <img
+                        src="{% static 'home/images/logo.png' %}"
+                        alt="Kherapati Sarkar Group Of Colleges Logo">
+                </div>
+
+                <div class="logo-text">
+                    <span>Kherapati Sarkar</span>
+                    <small>Group Of Colleges</small>
+                </div>
+
+            </a>
+
+
+            <!-- NAVIGATION -->
+            <nav class="navbar" id="mainNavbar">
+
+                <a href="#home" class="active">
+                    Home
+                </a>
+
+                <a href="#about">
+                    About
+                </a>
+
+                <a href="#courses">
+                    Courses
+                </a>
+
+                <a href="#facilities">
+                    Facilities
+                </a>
+
+                <a href="#achievements">
+                    Achievements
+                </a>
+
+                <a href="#leadership">
+                    Leadership
+                </a>
+
+                <a href="#contact">
+                    Contact
+                </a>
+
+                <a href="#inquiry">
+                    Inquiry
+                </a>
+
+                <a href="{% url 'admission_documents' %}">
+                    Admission
+                </a>
+
+            </nav>
+
+
+            <!-- DESKTOP CONTACT BUTTON -->
+            <a href="#contact" class="nav-btn">
+                Contact Us
+            </a>
+
+
+            <!-- MOBILE HAMBURGER -->
+            <button
+                type="button"
+                class="mobile-menu-btn"
+                id="mobileMenuBtn"
+                aria-label="Open menu"
+                aria-expanded="false">
+
+                ☰
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         HERO SECTION
+    ====================================================== -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-overlay"></div>
+
+        <div class="container hero-content">
+
+            <div class="hero-text">
+
+                <span class="hero-tag">
+                    Welcome to Kherapati Sarkar Group Of Colleges
+                </span>
+
+                <h1>
+                    Building Bright Futures
+                    Through Quality Education
+                </h1>
+
+                <p>
+                    Empowering students with accessible, modern and
+                    employment-oriented education for a better tomorrow.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#about" class="btn btn-primary">
+                        Explore Our College
+                    </a>
+
+                    <a href="#courses" class="btn btn-outline">
+                        View Courses
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         INTRO STATS
+    ====================================================== -->
+
+    <section class="stats">
+
+        <div class="container stats-grid">
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🎓
+                </div>
+
+                <h3>
+                    Quality Education
+                </h3>
+
+                <p>
+                    Focused on academic excellence and practical learning.
+                </p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    👨‍🏫
+                </div>
+
+                <h3>
+                    Experienced Faculty
+                </h3>
+
+                <p>
+                    Dedicated faculty supporting student growth and success.
+                </p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    💻
+                </div>
+
+                <h3>
+                    Modern Infrastructure
+                </h3>
+
+                <p>
+                    Technology-enabled classrooms, labs and learning spaces.
+                </p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🌱
+                </div>
+
+                <h3>
+                    Holistic Development
+                </h3>
+
+                <p>
+                    Encouraging academic, professional and personal growth.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ABOUT SECTION
+    ====================================================== -->
+
+    <section class="section about" id="about">
+
+        <div class="container about-grid">
+
+            <!-- IMAGE -->
+
+            <div class="about-image">
+
+                <div class="image-box">
+
+                    <img
+                        src="{% static 'home/images/college-building.png' %}"
+                        alt="Shree Kherapati Sarkar Group Of College">
+
+                </div>
+
+            </div>
+
+
+            <!-- CONTENT -->
+
+            <div class="about-content">
+
+                <span class="section-label">
+                    About Our College
+                </span>
+
+                <h2>
+                    A Place Where Education Meets Opportunity
+                </h2>
+
+                <p>
+                    Kherapati Sarkar Group Of Colleges, Indergarh
+                    (Datia), is a prominent educational institution
+                    committed to providing quality and value-based
+                    higher education to students from rural and
+                    semi-urban areas.
+                </p>
+
+                <p>
+                    With modern infrastructure, experienced faculty
+                    and a rich academic environment, the institution
+                    continuously works towards the overall development
+                    of students and the creation of a bright future
+                    for the next generation.
+                </p>
+
+                <a href="#contact" class="text-btn">
+                    Learn More →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         VISION & MISSION
+    ====================================================== -->
+
+    <section class="vision-section">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    Our Purpose
+                </span>
+
+                <h2>
+                    Vision & Mission
+                </h2>
+
+            </div>
+
+
+            <div class="vision-grid">
+
+                <!-- VISION -->
+
+                <div class="vision-card">
+
+                    <div class="card-icon">
+                        👁️
+                    </div>
+
+                    <h3>
+                        Our Vision
+                    </h3>
+
+                    <p>
+                        To provide accessible, modern and
+                        employment-oriented education to the youth
+                        of the region and build an empowered,
+                        educated and morally enriched society.
+                    </p>
+
+                </div>
+
+
+                <!-- MISSION -->
+
+                <div class="vision-card">
+
+                    <div class="card-icon">
+                        🎯
+                    </div>
+
+                    <h3>
+                        Our Mission
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            Provide high-quality academic and
+                            practical education.
+                        </li>
+
+                        <li>
+                            Develop technical, analytical and
+                            leadership skills among students.
+                        </li>
+
+                        <li>
+                            Prepare talented students from rural
+                            areas to compete at the national level.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         COURSES
+    ====================================================== -->
+
+    <section class="section courses" id="courses">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    Academic Programs
+                </span>
+
+                <h2>
+                    Courses We Offer
+                </h2>
+
+                <p>
+                    Explore undergraduate and postgraduate programs
+                    designed to provide strong academic foundations
+                    and practical knowledge.
+                </p>
+
+            </div>
+
+
+            <div class="courses-grid">
+
+                <!-- UNDERGRADUATE -->
+
+                <div class="course-card">
+
+                    <div class="course-number">
+                        01
+                    </div>
+
+                    <div class="course-icon">
+                        🎓
+                    </div>
+
+                    <h3>
+                        Undergraduate Programs
+                    </h3>
+
+                    <p>
+                        Build a strong foundation for higher education
+                        and professional opportunities.
+                    </p>
+
+                    <div class="course-list">
+
+                        <span>
+                            B.A.
+                        </span>
+
+                        <span>
+                            B.Sc.
+                        </span>
+
+                        <span>
+                            B.Com.
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- POSTGRADUATE -->
+
+                <div class="course-card">
+
+                    <div class="course-number">
+                        02
+                    </div>
+
+                    <div class="course-icon">
+                        📚
+                    </div>
+
+                    <h3>
+                        Postgraduate Programs
+                    </h3>
+
+                    <p>
+                        Advance your knowledge and expertise through
+                        specialized postgraduate education.
+                    </p>
+
+                    <div class="course-list">
+
+                        <span>
+                            M.A.
+                        </span>
+
+                        <span>
+                            M.Sc.
+                        </span>
+
+                        <span>
+                            PGDCA
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FACILITIES
+    ====================================================== -->
+
+    <section class="section facilities" id="facilities">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    Campus Facilities
+                </span>
+
+                <h2>
+                    Learn. Explore. Grow.
+                </h2>
+
+                <p>
+                    Our campus provides a supportive environment
+                    equipped with facilities that encourage learning,
+                    creativity and overall development.
+                </p>
+
+            </div>
+
+
+            <div class="facilities-grid">
+
+                <!-- FACILITY 1 -->
+
+                <div class="facility-card">
+
+                    <div class="facility-icon">
+                        💻
+                    </div>
+
+                    <h3>
+                        Smart Classes & Modern Laboratories
+                    </h3>
+
+                    <p>
+                        Digital boards and well-equipped computer
+                        and science laboratories for practical and
+                        technology-based learning.
+                    </p>
+
+                </div>
+
+
+                <!-- FACILITY 2 -->
+
+                <div class="facility-card">
+
+                    <div class="facility-icon">
+                        📖
+                    </div>
+
+                    <h3>
+                        Rich Library
+                    </h3>
+
+                    <p>
+                        A comprehensive collection of textbooks,
+                        journals, reference books and educational
+                        resources.
+                    </p>
+
+                </div>
+
+
+                <!-- FACILITY 3 -->
+
+                <div class="facility-card">
+
+                    <div class="facility-icon">
+                        🏆
+                    </div>
+
+                    <h3>
+                        Sports & Recreation
+                    </h3>
+
+                    <p>
+                        Spacious sports grounds with facilities for
+                        indoor and outdoor sports activities.
+                    </p>
+
+                </div>
+
+
+                <!-- FACILITY 4 -->
+
+                <div class="facility-card">
+
+                    <div class="facility-icon">
+                        🎭
+                    </div>
+
+                    <h3>
+                        Auditorium & Cultural Centre
+                    </h3>
+
+                    <p>
+                        A spacious auditorium for seminars,
+                        workshops, cultural programs and academic
+                        events.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ACHIEVEMENTS
+    ====================================================== -->
+
+    <section class="achievement-section" id="achievements">
+
+        <div class="container achievement-grid">
+
+            <div>
+
+                <span class="section-label">
+                    Our Achievements
+                </span>
+
+                <h2>
+                    Inspiring Excellence Beyond the Classroom
+                </h2>
+
+                <p>
+                    We encourage students to participate in
+                    academics, sports, social service and other
+                    activities that help them develop confidence
+                    and leadership skills.
+                </p>
+
+            </div>
+
+
+            <div class="achievement-list">
+
+                <!-- ACHIEVEMENT 1 -->
+
+                <div class="achievement-item">
+
+                    <span>
+                        ✓
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Academic Excellence
+                        </h3>
+
+                        <p>
+                            Excellent performance of students in
+                            university examinations.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ACHIEVEMENT 2 -->
+
+                <div class="achievement-item">
+
+                    <span>
+                        ✓
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            NSS & Social Service
+                        </h3>
+
+                        <p>
+                            Active participation in National
+                            Service Scheme activities.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ACHIEVEMENT 3 -->
+
+                <div class="achievement-item">
+
+                    <span>
+                        ✓
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Sports Achievements
+                        </h3>
+
+                        <p>
+                            Students have participated in sports
+                            competitions and achieved district-level
+                            recognition.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         LEADERSHIP
+    ====================================================== -->
+
+    <section class="leadership-section" id="leadership">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    OUR LEADERSHIP
+                </span>
+
+                <h2>
+                    Our Leadership Team
+                </h2>
+
+                <p>
+                    Guiding our students with vision, experience and
+                    commitment towards excellence in education.
+                </p>
+
+            </div>
+
+
+            <div class="leadership-grid">
+
+                <!-- CHAIRMAN -->
+
+                <div class="leader-card">
+
+                    <div class="leader-image">
+
+                        <img
+                            src="{% static 'home/images/chairman.jpg' %}"
+                            alt="College Chairman">
+
+                    </div>
+
+                    <div class="leader-content">
+
+                        <h3>
+                            Mr. Bharat Shrivastava
+                        </h3>
+
+                        <span class="leader-position">
+                            CHAIRMAN
+                        </span>
+
+                        <p>
+                            Leading the institution with a vision
+                            for quality education and holistic
+                            development.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DIRECTOR -->
+
+                <div class="leader-card">
+
+                    <div class="leader-image">
+
+                        <img
+                            src="{% static 'home/images/director.jpg' %}"
+                            alt="College Director">
+
+                    </div>
+
+                    <div class="leader-content">
+
+                        <h3>
+                            Mr. Rajeev Shrivastava
+                        </h3>
+
+                        <span class="leader-position">
+                            DIRECTOR
+                        </span>
+
+                        <p>
+                            Inspiring excellence through academic
+                            leadership, innovation and student
+                            success.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRINCIPAL -->
+
+                <div class="leader-card">
+
+                    <div class="leader-image">
+
+                        <img
+                            src="{% static 'home/images/principal.jpeg' %}"
+                            alt="College Principal">
+
+                    </div>
+
+                    <div class="leader-content">
+
+                        <h3>
+                            Mr. Sanjay Shrivastava
+                        </h3>
+
+                        <span class="leader-position">
+                            PRINCIPAL
+                        </span>
+
+                        <p>
+                            Dedicated to academic excellence and
+                            creating a nurturing environment
+                            for all students.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CONTACT
+    ====================================================== -->
+
+    <section class="section contact" id="contact">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    Get In Touch
+                </span>
+
+                <h2>
+                    Contact Kherapati Sarkar Group Of Colleges
+                </h2>
+
+            </div>
+
+
+            <div class="contact-grid">
+
+                <!-- ADDRESS -->
+
+                <div class="contact-card">
+
+                    <div class="contact-icon">
+                        📍
+                    </div>
+
+                    <h3>
+                        College Address
+                    </h3>
+
+                    <p>
+                        Gwalior Road, Indergarh,<br>
+                        District Datia, Madhya Pradesh (M.P.) - 475675
+                    </p>
+
+                </div>
+
+
+                <!-- PHONE -->
+
+                <div class="contact-card">
+
+                    <div class="contact-icon">
+                        📞
+                    </div>
+
+                    <h3>
+                        Phone
+                    </h3>
+
+                    <p>
+                        <a href="tel:9893892277">
+                            9893892277
+                        </a>
+                    </p>
+
+                </div>
+
+
+                <!-- EMAIL -->
+
+                <div class="contact-card">
+
+                    <div class="contact-icon">
+                        ✉️
+                    </div>
+
+                    <h3>
+                        Email
+                    </h3>
+
+                    <p>
+                        <a href="mailto:sks274290@gmail.com">
+                            sks274290@gmail.com
+                        </a>
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         INQUIRY
+    ====================================================== -->
+
+    <section class="inquiry-section" id="inquiry">
+
+        <div class="container inquiry-container">
+
+            <!-- INQUIRY INFORMATION -->
+
+            <div class="inquiry-info">
+
+                <span class="section-label">
+                    Have a Question?
+                </span>
+
+                <h2>
+                    Send Us Your Inquiry
+                </h2>
+
+                <p>
+                    Interested in admission, courses, fees or other
+                    college information? Fill out the form and send
+                    your inquiry directly to our WhatsApp.
+                </p>
+
+
+                <div class="inquiry-contact">
+
+                    <!-- PHONE -->
+
+                    <div class="inquiry-contact-item">
+
+                        <span>
+                            📞
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Call Us
+                            </strong>
+
+                            <a href="tel:9893892277">
+                                9893892277
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- EMAIL -->
+
+                    <div class="inquiry-contact-item">
+
+                        <span>
+                            ✉️
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Email
+                            </strong>
+
+                            <a href="mailto:sks274290@gmail.com">
+                                sks274290@gmail.com
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ADDRESS -->
+
+                    <div class="inquiry-contact-item">
+
+                        <span>
+                            📍
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Address
+                            </strong>
+
+                            <p>
+                                Gwalior Road, Indergarh,
+                                District Datia, M.P. - 475675
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- INQUIRY FORM -->
+
+            <div class="inquiry-form-card">
+
+                <form id="collegeInquiryForm">
+
+                    <!-- NAME + MOBILE -->
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="studentName">
+                                Full Name *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="studentName"
+                                placeholder="Enter your full name"
+                                required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="mobileNumber">
+                                Mobile Number *
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="mobileNumber"
+                                placeholder="Enter mobile number"
+                                pattern="[0-9]{10}"
+                                maxlength="10"
+                                inputmode="numeric"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- COURSE + YEAR -->
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="course">
+                                Interested Course *
+                            </label>
+
+                            <select id="course" required>
+
+                                <option value="">
+                                    Select a course
+                                </option>
+
+                                <option value="B.A.">
+                                    B.A.
+                                </option>
+
+                                <option value="B.Sc.">
+                                    B.Sc.
+                                </option>
+
+                                <option value="B.Com.">
+                                    B.Com.
+                                </option>
+
+                                <option value="M.A.">
+                                    M.A.
+                                </option>
+
+                                <option value="M.Sc.">
+                                    M.Sc.
+                                </option>
+
+                                <option value="PGDCA">
+                                    PGDCA
+                                </option>
+
+                                <option value="Other">
+                                    Other
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="academicYear">
+                                Academic Year
+                            </label>
+
+                            <select id="academicYear">
+
+                                <option value="2026-27">
+                                    2026-27
+                                </option>
+
+                                <option value="2027-28">
+                                    2027-28
+                                </option>
+
+                                <option value="2028-29">
+                                    2028-29
+                                </option>
+
+                                <option value="2029-30">
+                                    2029-30
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- INQUIRY TYPE -->
+
+                    <div class="form-group">
+
+                        <label for="inquiryType">
+                            Inquiry Type
+                        </label>
+
+                        <select id="inquiryType">
+
+                            <option value="Admission Inquiry">
+                                Admission Inquiry
+                            </option>
+
+                            <option value="Course Information">
+                                Course Information
+                            </option>
+
+                            <option value="Fees Information">
+                                Fees Information
+                            </option>
+
+                            <option value="Documents Required">
+                                Documents Required
+                            </option>
+
+                            <option value="College Facilities">
+                                College Facilities
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- MESSAGE -->
+
+                    <div class="form-group">
+
+                        <label for="message">
+                            Your Message *
+                        </label>
+
+                        <textarea
+                            id="message"
+                            rows="5"
+                            placeholder="Write your inquiry here..."
+                            required></textarea>
+
+                    </div>
+
+
+                    <!-- WHATSAPP BUTTON -->
+
+                    <button
+                        type="submit"
+                        class="whatsapp-btn">
+
+                        <span class="whatsapp-icon">
+                            ☎
+                        </span>
+
+                        Send Inquiry on WhatsApp
+
+                    </button>
+
+
+                    <p class="form-note">
+                        Your inquiry will open in WhatsApp.
+                        You can review the message before sending it.
+                    </p>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="footer">
+
+        <div class="container footer-grid">
+
+            <!-- ABOUT -->
+
+            <div class="footer-about">
+
+                <h3>
+                    Kherapati Sarkar Group Of Colleges
+                </h3>
+
+                <p>
+                    Providing quality, accessible and
+                    value-based higher education for a
+                    brighter future.
+                </p>
+
+            </div>
+
+
+            <!-- QUICK LINKS -->
+
+            <div class="footer-links">
+
+                <h4>
+                    Quick Links
+                </h4>
+
+                <a href="#home">
+                    Home
+                </a>
+
+                <a href="#about">
+                    About
+                </a>
+
+                <a href="#courses">
+                    Courses
+                </a>
+
+                <a href="#facilities">
+                    Facilities
+                </a>
+
+                <a href="#achievements">
+                    Achievements
+                </a>
+
+                <a href="#contact">
+                    Contact
+                </a>
+
+            </div>
+
+
+            <!-- CONTACT -->
+
+            <div class="footer-contact">
+
+                <h4>
+                    Contact
+                </h4>
+
+                <p>
+                    Gwalior Road, Indergarh,<br>
+                    District Datia, M.P. - 475675
+                </p>
+
+                <p>
+                    📞 9893892277
+                </p>
+
+                <p>
+                    ✉️ sks274290@gmail.com
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOOTER BOTTOM -->
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026
+                <strong>
+                    Kherapati Sarkar Group Of Colleges
+                </strong>.
+                All Rights Reserved.
+            </p>
+
+            <p class="developer-credit">
+                Website Designed & Developed by
+                <strong>
+                    Ritik Shrivastava
+                </strong>
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         WHATSAPP INQUIRY JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const inquiryForm =
+                document.getElementById("collegeInquiryForm");
+
+            if (!inquiryForm) {
+                return;
+            }
+
+            inquiryForm.addEventListener("submit", function (event) {
+
+                event.preventDefault();
+
+
+                const name =
+                    document
+                        .getElementById("studentName")
+                        .value
+                        .trim();
+
+
+                const mobile =
+                    document
+                        .getElementById("mobileNumber")
+                        .value
+                        .trim();
+
+
+                const course =
+                    document
+                        .getElementById("course")
+                        .value;
+
+
+                const academicYear =
+                    document
+                        .getElementById("academicYear")
+                        .value;
+
+
+                const inquiryType =
+                    document
+                        .getElementById("inquiryType")
+                        .value;
+
+
+                const message =
+                    document
+                        .getElementById("message")
+                        .value
+                        .trim();
+
+
+                const whatsappMessage =
+`*Kherapati Sarkar Group Of Colleges*
+
+*New College Inquiry*
+
+Name: ${name}
+
+Mobile Number: ${mobile}
+
+Interested Course: ${course}
+
+Academic Year: ${academicYear}
+
+Inquiry Type: ${inquiryType}
+
+Message:
+${message}
+
+I would like to get more information about the college.`;
+
+
+                const whatsappNumber =
+                    "9893892277";
+
+
+                const whatsappURL =
+                    "https://wa.me/" +
+                    whatsappNumber +
+                    "?text=" +
+                    encodeURIComponent(whatsappMessage);
+
+
+                window.open(
+                    whatsappURL,
+                    "_blank"
+                );
+
+            });
+
+        });
+
+    </script>
+
+
+    <!-- =====================================================
+         MOBILE MENU JAVASCRIPT
+         ONLY ONE HAMBURGER SCRIPT
+    ====================================================== -->
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const menuBtn =
+                document.getElementById("mobileMenuBtn");
+
+            const navbar =
+                document.getElementById("mainNavbar");
+
+
+            if (!menuBtn || !navbar) {
+
+                console.log(
+                    "Mobile menu elements not found"
+                );
+
+                return;
+            }
+
+
+            /* OPEN / CLOSE MOBILE MENU */
+
+            menuBtn.addEventListener("click", function (event) {
+
+                event.preventDefault();
+                event.stopPropagation();
+
+
+                const isOpen =
+                    navbar.classList.toggle("mobile-open");
+
+
+                if (isOpen) {
+
+                    menuBtn.innerHTML = "✕";
+
+                    menuBtn.setAttribute(
+                        "aria-label",
+                        "Close menu"
+                    );
+
+                    menuBtn.setAttribute(
+                        "aria-expanded",
+                        "true"
+                    );
+
+                } else {
+
+                    menuBtn.innerHTML = "☰";
+
+                    menuBtn.setAttribute(
+                        "aria-label",
+                        "Open menu"
+                    );
+
+                    menuBtn.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                }
+
+            });
+
+
+            /* CLOSE MENU AFTER CLICKING LINK */
+
+            navbar
+                .querySelectorAll("a")
+                .forEach(function (link) {
+
+                    link.addEventListener(
+                        "click",
+                        function () {
+
+                            navbar.classList.remove(
+                                "mobile-open"
+                            );
+
+
+                            menuBtn.innerHTML = "☰";
+
+
+                            menuBtn.setAttribute(
+                                "aria-label",
+                                "Open menu"
+                            );
+
+
+                            menuBtn.setAttribute(
+                                "aria-expanded",
+                                "false"
+                            );
+
+                        }
+                    );
+
+                });
+
+        });
+
+    </script>
+
+</body>
+
+</html>

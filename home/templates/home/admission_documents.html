@@ -1,0 +1,1451 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Admission Documents | Kherapati Sarkar Group Of Colleges
+    </title>
+
+    <!-- Main CSS -->
+    <link
+        rel="stylesheet"
+        href="{% static 'home/css/style.css' %}"
+    >
+
+    <!-- Google Fonts -->
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         ADMISSION PAGE CSS
+    ====================================================== -->
+
+    <style>
+
+        /* =====================================================
+           PAGE
+        ====================================================== */
+
+        .admission-page {
+
+            padding: 90px 0;
+
+            background: #f5f8fb;
+
+            min-height: 80vh;
+
+        }
+
+
+        /* =====================================================
+           HEADER
+        ====================================================== */
+
+        .admission-header {
+
+            text-align: center;
+
+            max-width: 750px;
+
+            margin: 0 auto 55px;
+
+        }
+
+
+        .admission-header h1 {
+
+            font-family: "Playfair Display", serif;
+
+            font-size: 48px;
+
+            line-height: 1.2;
+
+            color: #102a43;
+
+            margin: 0 0 15px;
+
+        }
+
+
+        .admission-header p {
+
+            color: #667085;
+
+            font-size: 16px;
+
+            line-height: 1.7;
+
+            margin: 0;
+
+        }
+
+
+        /* =====================================================
+           DOCUMENT GRID
+        ====================================================== */
+
+        .document-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+
+            gap: 30px;
+
+        }
+
+
+        /* =====================================================
+           DOCUMENT CARD
+        ====================================================== */
+
+        .document-card {
+
+            background: #ffffff;
+
+            border-radius: 15px;
+
+            padding: 35px;
+
+            border: 1px solid #e4eaf0;
+
+            box-shadow:
+                0 12px 35px
+                rgba(16, 24, 40, 0.06);
+
+        }
+
+
+        .document-card h2 {
+
+            color: #123c69;
+
+            font-size: 25px;
+
+            margin: 0 0 10px;
+
+        }
+
+
+        .document-card .description {
+
+            color: #667085;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+
+            margin: 0 0 25px;
+
+        }
+
+
+        /* =====================================================
+           DOCUMENT LIST
+        ====================================================== */
+
+        .document-list {
+
+            padding: 0;
+
+            margin: 0 0 30px;
+
+            list-style: none;
+
+            counter-reset: documents;
+
+        }
+
+
+        .document-list li {
+
+            counter-increment: documents;
+
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 12px;
+
+            padding: 12px 0;
+
+            border-bottom: 1px solid #edf1f5;
+
+            color: #344054;
+
+            font-size: 14px;
+
+            line-height: 1.6;
+
+        }
+
+
+        .document-list li:last-child {
+
+            border-bottom: none;
+
+        }
+
+
+        .document-list li::before {
+
+            content: counter(documents);
+
+            min-width: 27px;
+
+            width: 27px;
+
+            height: 27px;
+
+            border-radius: 50%;
+
+            background: #eaf4fb;
+
+            color: #1769aa;
+
+            display: grid;
+
+            place-items: center;
+
+            font-weight: 700;
+
+            font-size: 12px;
+
+            flex-shrink: 0;
+
+        }
+
+
+        .document-list small {
+
+            color: #667085;
+
+            font-size: 12px;
+
+        }
+
+
+        /* =====================================================
+           DOWNLOAD BUTTON
+        ====================================================== */
+
+        .download-btn {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 8px;
+
+            padding: 13px 20px;
+
+            background: #1769aa;
+
+            color: #ffffff;
+
+            border-radius: 7px;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            text-decoration: none;
+
+            transition:
+                background 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+
+        }
+
+
+        .download-btn:hover {
+
+            background: #0f4f80;
+
+            color: #ffffff;
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 8px 18px
+                rgba(23, 105, 170, 0.20);
+
+        }
+
+
+        /* =====================================================
+           ONLINE ADMISSION
+        ====================================================== */
+
+        .online-admission {
+
+            margin-top: 35px;
+
+            padding: 45px;
+
+            border-radius: 15px;
+
+            background: #123c69;
+
+            color: #ffffff;
+
+            text-align: center;
+
+        }
+
+
+        .online-admission h2 {
+
+            font-family: "Playfair Display", serif;
+
+            font-size: 38px;
+
+            margin: 0 0 10px;
+
+        }
+
+
+        .online-admission p {
+
+            color: #d8e5ef;
+
+            line-height: 1.7;
+
+            margin: 0 0 20px;
+
+        }
+
+
+        /* =====================================================
+           BACK HOME
+        ====================================================== */
+
+        .back-home-wrapper {
+
+            text-align: center;
+
+            margin-top: 35px;
+
+        }
+
+
+        .back-home {
+
+            display: inline-block;
+
+            color: #1769aa;
+
+            font-weight: 700;
+
+            text-decoration: none;
+
+            transition: color 0.3s ease;
+
+        }
+
+
+        .back-home:hover {
+
+            color: #0f4f80;
+
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ====================================================== */
+
+        .admission-footer {
+
+            background: #102a43;
+
+            color: #ffffff;
+
+        }
+
+
+        .admission-footer .footer-bottom {
+
+            padding: 25px 20px;
+
+            text-align: center;
+
+        }
+
+
+        .admission-footer .footer-bottom p {
+
+            margin: 5px 0;
+
+            color: #d8e5ef;
+
+            font-size: 14px;
+
+        }
+
+
+        .admission-footer .footer-bottom strong {
+
+            color: #ffffff;
+
+        }
+
+
+        /* =====================================================
+           MOBILE NAVIGATION
+        ====================================================== */
+
+        @media (max-width: 800px) {
+
+            .mobile-menu-btn {
+
+                display: flex !important;
+
+                visibility: visible !important;
+
+                opacity: 1 !important;
+
+                pointer-events: auto !important;
+
+                align-items: center;
+
+                justify-content: center;
+
+            }
+
+
+            .navbar {
+
+                display: none !important;
+
+                position: absolute;
+
+                top: 75px;
+
+                left: 0;
+
+                right: 0;
+
+                width: 100%;
+
+                flex-direction: column;
+
+                align-items: stretch;
+
+                gap: 0;
+
+                background: #ffffff;
+
+                padding: 10px 0;
+
+                border-top: 1px solid #e9edf3;
+
+                border-bottom: 1px solid #e9edf3;
+
+                box-shadow:
+                    0 15px 30px
+                    rgba(16, 24, 40, 0.12);
+
+                z-index: 9999;
+
+            }
+
+
+            .navbar.mobile-open {
+
+                display: flex !important;
+
+            }
+
+
+            .navbar a {
+
+                display: block;
+
+                width: 100%;
+
+                padding: 14px 25px;
+
+                text-align: left;
+
+                font-size: 15px;
+
+                font-weight: 600;
+
+                border-bottom: 1px solid #f0f2f5;
+
+                text-decoration: none;
+
+            }
+
+
+            .navbar a:last-child {
+
+                border-bottom: none;
+
+            }
+
+
+            .navbar a:hover,
+
+            .navbar a.active {
+
+                background: #f5f8fb;
+
+                color: #1769aa;
+
+            }
+
+
+            .nav-btn {
+
+                display: none !important;
+
+            }
+
+
+            /* Admission */
+
+            .admission-page {
+
+                padding: 60px 0;
+
+            }
+
+
+            .admission-header {
+
+                margin-bottom: 40px;
+
+            }
+
+
+            .admission-header h1 {
+
+                font-size: 38px;
+
+            }
+
+
+            .admission-header p {
+
+                font-size: 15px;
+
+            }
+
+
+            .document-grid {
+
+                grid-template-columns: 1fr;
+
+                gap: 25px;
+
+            }
+
+
+            .document-card {
+
+                padding: 28px 22px;
+
+            }
+
+
+            .document-card h2 {
+
+                font-size: 23px;
+
+            }
+
+
+            .download-btn {
+
+                width: 100%;
+
+            }
+
+
+            .online-admission {
+
+                padding: 30px 20px;
+
+            }
+
+
+            .online-admission h2 {
+
+                font-size: 30px;
+
+            }
+
+        }
+
+
+        /* =====================================================
+           SMALL MOBILE
+        ====================================================== */
+
+        @media (max-width: 550px) {
+
+            .admission-page {
+
+                padding: 45px 0;
+
+            }
+
+
+            .admission-header h1 {
+
+                font-size: 32px;
+
+            }
+
+
+            .admission-header p {
+
+                font-size: 14px;
+
+            }
+
+
+            .document-card {
+
+                padding: 25px 18px;
+
+                border-radius: 12px;
+
+            }
+
+
+            .document-card h2 {
+
+                font-size: 21px;
+
+            }
+
+
+            .document-list li {
+
+                font-size: 13px;
+
+            }
+
+
+            .online-admission {
+
+                border-radius: 12px;
+
+            }
+
+
+            .online-admission h2 {
+
+                font-size: 27px;
+
+            }
+
+
+            .online-admission p {
+
+                font-size: 14px;
+
+            }
+
+        }
+
+
+        /* =====================================================
+           VERY SMALL MOBILE
+        ====================================================== */
+
+        @media (max-width: 360px) {
+
+            .admission-header h1 {
+
+                font-size: 28px;
+
+            }
+
+
+            .document-card {
+
+                padding: 22px 15px;
+
+            }
+
+
+            .document-list li {
+
+                gap: 9px;
+
+            }
+
+
+            .document-list li::before {
+
+                min-width: 25px;
+
+                width: 25px;
+
+                height: 25px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
+    <header class="header">
+
+        <div class="container nav-container">
+
+
+            <!-- LOGO -->
+
+            <a
+                href="{% url 'home' %}"
+                class="logo"
+            >
+
+                <div class="logo-circle">
+
+                    <img
+                        src="{% static 'home/images/logo.png' %}"
+                        alt="Kherapati Sarkar Group Of Colleges Logo"
+                    >
+
+                </div>
+
+
+                <div class="logo-text">
+
+                    <span>
+                        Kherapati Sarkar
+                    </span>
+
+                    <small>
+                        Group Of Colleges
+                    </small>
+
+                </div>
+
+            </a>
+
+
+            <!-- NAVIGATION -->
+
+            <nav
+                class="navbar"
+                id="mainNavbar"
+            >
+
+                <a
+                    href="{% url 'home' %}#home"
+                >
+                    Home
+                </a>
+
+
+                <a
+                    href="{% url 'home' %}#about"
+                >
+                    About
+                </a>
+
+
+                <a
+                    href="{% url 'home' %}#courses"
+                >
+                    Courses
+                </a>
+
+
+                <a
+                    href="{% url 'home' %}#facilities"
+                >
+                    Facilities
+                </a>
+
+
+                <a
+                    href="{% url 'home' %}#achievements"
+                >
+                    Achievements
+                </a>
+
+
+                <a
+                    href="{% url 'home' %}#leadership"
+                >
+                    Leadership
+                </a>
+
+
+                <a
+                    href="{% url 'home' %}#contact"
+                >
+                    Contact
+                </a>
+
+
+                <a
+                    href="{% url 'home' %}#inquiry"
+                >
+                    Inquiry
+                </a>
+
+
+                <a
+                    href="{% url 'admission_documents' %}"
+                    class="active"
+                >
+                    Admission
+                </a>
+
+            </nav>
+
+
+            <!-- DESKTOP CONTACT BUTTON -->
+
+            <a
+                href="{% url 'home' %}#contact"
+                class="nav-btn"
+            >
+                Contact Us
+            </a>
+
+
+            <!-- MOBILE MENU BUTTON -->
+
+            <button
+                type="button"
+                class="mobile-menu-btn"
+                id="mobileMenuBtn"
+                aria-label="Open menu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         ADMISSION PAGE
+    ====================================================== -->
+
+    <main>
+
+        <section class="admission-page">
+
+            <div class="container">
+
+
+                <!-- PAGE HEADER -->
+
+                <div class="admission-header">
+
+                    <h1>
+                        Admission Documents
+                    </h1>
+
+                    <p>
+                        Find the required documents for new
+                        UG/PG admission and the Village Girl
+                        scheme. Download the complete document
+                        lists as PDF.
+                    </p>
+
+                </div>
+
+
+                <!-- =================================================
+                     DOCUMENT GRID
+                ================================================== -->
+
+                <div class="document-grid">
+
+
+                    <!-- =============================================
+                         UG / PG ADMISSION
+                    ============================================== -->
+
+                    <div class="document-card">
+
+                        <h2>
+                            UG / PG New Admission
+                        </h2>
+
+
+                        <p class="description">
+
+                            Documents required for undergraduate
+                            and postgraduate admission.
+
+                        </p>
+
+
+                        <ol class="document-list">
+
+
+                            <li>
+                                10th Standard Mark Sheet
+                            </li>
+
+
+                            <li>
+                                12th Standard Mark Sheet
+                            </li>
+
+
+                            <li>
+
+                                <div>
+
+                                    Graduation Mark Sheet
+
+                                    <br>
+
+                                    <small>
+                                        Required for postgraduate
+                                        admission
+                                    </small>
+
+                                </div>
+
+                            </li>
+
+
+                            <li>
+                                Caste Certificate
+                            </li>
+
+
+                            <li>
+                                Domicile / Residence Certificate
+                            </li>
+
+
+                            <li>
+                                Income Certificate
+                            </li>
+
+
+                            <li>
+                                Samagra ID
+                            </li>
+
+
+                            <li>
+                                Photocopy of Aadhaar Card
+                            </li>
+
+
+                            <li>
+                                One Passport-size Photograph
+                            </li>
+
+
+                            <li>
+
+                                <div>
+
+                                    ABC ID
+
+                                    <br>
+
+                                    <small>
+                                        Academic Bank of Credits ID
+                                    </small>
+
+                                </div>
+
+                            </li>
+
+                        </ol>
+
+
+                        <!-- DOWNLOAD -->
+
+                        <a
+                            href="/media/admission/Kherapati_ug_pg_admission_documents_english.pdf"
+                            class="download-btn"
+                            download
+                        >
+
+                            📄
+                            Download UG/PG Documents PDF
+
+                        </a>
+
+                    </div>
+
+
+                    <!-- =============================================
+                         VILLAGE GIRL SCHEME
+                    ============================================== -->
+
+                    <div class="document-card">
+
+                        <h2>
+                            Village Girl Scheme
+                        </h2>
+
+
+                        <p class="description">
+
+                            Documents required for eligible
+                            Village Girl applicants.
+
+                        </p>
+
+
+                        <ol class="document-list">
+
+
+                            <li>
+
+                                <div>
+
+                                    Five-page form for first-year
+                                    Village Girl applicants
+
+                                </div>
+
+                            </li>
+
+
+                            <li>
+                                Completed online application form
+                            </li>
+
+
+                            <li>
+                                Photocopy of 10th Standard Mark Sheet
+                            </li>
+
+
+                            <li>
+                                Photocopy of 12th Standard Mark Sheet
+                            </li>
+
+
+                            <li>
+                                Online Fee Receipt
+                            </li>
+
+
+                            <li>
+                                Income Certificate
+                            </li>
+
+
+                            <li>
+                                Caste Certificate
+                            </li>
+
+
+                            <li>
+                                Domicile / Residence Certificate
+                            </li>
+
+
+                            <li>
+                                Family ID
+                            </li>
+
+
+                            <li>
+                                Aadhaar Card
+                            </li>
+
+
+                            <li>
+                                Bank Passbook
+                            </li>
+
+
+                            <li>
+                                Transfer Certificate (TC),
+                                as applicable
+                            </li>
+
+                        </ol>
+
+
+                        <!-- DOWNLOAD -->
+
+                        <a
+                            href="/media/admission/Kherapati_village_girl_documents_english.pdf"
+                            class="download-btn"
+                            download
+                        >
+
+                            📄
+                            Download Village Girl Documents PDF
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     ONLINE ADMISSION
+                     
+                     Kept available if you want to add an
+                     online admission link later.
+                ================================================== -->
+
+                <!--
+                <div class="online-admission">
+
+                    <h2>
+                        Start Your Admission Journey
+                    </h2>
+
+                    <p>
+                        Contact the college office for admission
+                        guidance, course information and application
+                        assistance.
+                    </p>
+
+                    <a
+                        href="{% url 'home' %}#inquiry"
+                        class="download-btn"
+                    >
+                        Contact Admission Office
+                    </a>
+
+                </div>
+                -->
+
+
+                <!-- BACK TO HOME -->
+
+                <div class="back-home-wrapper">
+
+                    <a
+                        href="{% url 'home' %}"
+                        class="back-home"
+                    >
+
+                        ← Back to Home
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="footer admission-footer">
+
+        <div class="footer-bottom">
+
+            <p>
+
+                © 2026
+
+                <strong>
+                    Kherapati Sarkar Group Of Colleges
+                </strong>.
+
+                All Rights Reserved.
+
+            </p>
+
+
+            <p class="developer-credit">
+
+                Website Designed &amp; Developed by
+
+                <strong>
+                    Ritik Shrivastava
+                </strong>
+
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         MOBILE MENU JAVASCRIPT
+         ONLY ONE MOBILE MENU SCRIPT
+    ====================================================== -->
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+
+                /* =============================================
+                   GET ELEMENTS
+                ============================================== */
+
+                const menuBtn =
+                    document.getElementById(
+                        "mobileMenuBtn"
+                    );
+
+
+                const navbar =
+                    document.getElementById(
+                        "mainNavbar"
+                    );
+
+
+                /* =============================================
+                   CHECK ELEMENTS
+                ============================================== */
+
+                if (!menuBtn || !navbar) {
+
+                    console.log(
+                        "Mobile menu elements not found"
+                    );
+
+                    return;
+
+                }
+
+
+                /* =============================================
+                   OPEN / CLOSE MENU
+                ============================================== */
+
+                menuBtn.addEventListener(
+                    "click",
+                    function (event) {
+
+                        event.preventDefault();
+
+                        event.stopPropagation();
+
+
+                        const isOpen =
+                            navbar.classList.toggle(
+                                "mobile-open"
+                            );
+
+
+                        if (isOpen) {
+
+                            menuBtn.innerHTML = "✕";
+
+
+                            menuBtn.setAttribute(
+                                "aria-label",
+                                "Close menu"
+                            );
+
+
+                            menuBtn.setAttribute(
+                                "aria-expanded",
+                                "true"
+                            );
+
+                        } else {
+
+                            menuBtn.innerHTML = "☰";
+
+
+                            menuBtn.setAttribute(
+                                "aria-label",
+                                "Open menu"
+                            );
+
+
+                            menuBtn.setAttribute(
+                                "aria-expanded",
+                                "false"
+                            );
+
+                        }
+
+                    }
+                );
+
+
+                /* =============================================
+                   CLOSE MENU AFTER LINK CLICK
+                ============================================== */
+
+                navbar
+                    .querySelectorAll("a")
+                    .forEach(
+                        function (link) {
+
+                            link.addEventListener(
+                                "click",
+                                function () {
+
+                                    navbar.classList.remove(
+                                        "mobile-open"
+                                    );
+
+
+                                    menuBtn.innerHTML =
+                                        "☰";
+
+
+                                    menuBtn.setAttribute(
+                                        "aria-label",
+                                        "Open menu"
+                                    );
+
+
+                                    menuBtn.setAttribute(
+                                        "aria-expanded",
+                                        "false"
+                                    );
+
+                                }
+                            );
+
+                        }
+                    );
+
+
+                /* =============================================
+                   CLOSE MENU WHEN CLICKING OUTSIDE
+                ============================================== */
+
+                document.addEventListener(
+                    "click",
+                    function (event) {
+
+                        const clickedInsideNavbar =
+                            navbar.contains(event.target);
+
+
+                        const clickedMenuButton =
+                            menuBtn.contains(event.target);
+
+
+                        if (
+                            !clickedInsideNavbar &&
+                            !clickedMenuButton
+                        ) {
+
+                            navbar.classList.remove(
+                                "mobile-open"
+                            );
+
+
+                            menuBtn.innerHTML =
+                                "☰";
+
+
+                            menuBtn.setAttribute(
+                                "aria-label",
+                                "Open menu"
+                            );
+
+
+                            menuBtn.setAttribute(
+                                "aria-expanded",
+                                "false"
+                            );
+
+                        }
+
+                    }
+                );
+
+
+                /* =============================================
+                   RESET MENU WHEN SCREEN BECOMES DESKTOP
+                ============================================== */
+
+                window.addEventListener(
+                    "resize",
+                    function () {
+
+                        if (window.innerWidth > 800) {
+
+                            navbar.classList.remove(
+                                "mobile-open"
+                            );
+
+
+                            menuBtn.innerHTML =
+                                "☰";
+
+
+                            menuBtn.setAttribute(
+                                "aria-label",
+                                "Open menu"
+                            );
+
+
+                            menuBtn.setAttribute(
+                                "aria-expanded",
+                                "false"
+                            );
+
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>
