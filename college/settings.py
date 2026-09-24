@@ -23,7 +23,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-k+u4$c0=ay-2hzz^ln8r*=9v%8@c8=5iec1_*jd#!o1h&*-0p-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = true
+<<<<<<< HEAD
+DEBUG = False
+=======
+DEBUG = False
+>>>>>>> da54b19 (Update Django settings for production readiness)
 
 ALLOWED_HOSTS = []
 
@@ -44,6 +48,7 @@ STATIC_URL = "static/"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -121,3 +126,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
