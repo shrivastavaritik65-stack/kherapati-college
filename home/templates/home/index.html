@@ -125,19 +125,18 @@
 
             <div class="hero-text">
 
-                <span class="hero-tag">
+                {% comment %} <span class="hero-tag">
                     Welcome to Kherapati Sarkar Group Of Colleges
-                </span>
+                </span> {% endcomment %}
 
                 <h1>
-                    Building Bright Futures
-                    Through Quality Education
+                    Kherapati Sarkar Group Of Colleges
                 </h1>
 
-                <p>
+                {% comment %} <p>
                     Empowering students with accessible, modern and
                     employment-oriented education for a better tomorrow.
-                </p>
+                </p> {% endcomment %}
 
                 <div class="hero-buttons">
 
@@ -237,67 +236,138 @@
 
     </section>
 
+<!-- =====================================================
+     ABOUT SECTION
+====================================================== -->
 
-    <!-- =====================================================
-         ABOUT SECTION
-    ====================================================== -->
+<section class="section about" id="about">
 
-    <section class="section about" id="about">
+    <div class="container about-grid">
 
-        <div class="container about-grid">
+        <!-- IMAGE SLIDESHOW -->
 
-            <!-- IMAGE -->
+        <div class="about-image">
 
-            <div class="about-image">
+            <div class="image-box">
 
-                <div class="image-box">
+                <!-- Slides -->
+                <div class="about-slides">
 
                     <img
                         src="{% static 'home/images/college-building.png' %}"
-                        alt="Shree Kherapati Sarkar Group Of College">
+                        alt="College Building"
+                        class="about-slide active"
+                    >
+
+                    <img
+                        src="{% static 'home/images/college4.jpeg' %}"
+                        alt="College Campus"
+                        class="about-slide"
+                    >
+
+                    <img
+                        src="{% static 'home/images/collegenew.png' %}"
+                        alt="College Classroom"
+                        class="about-slide"
+                    >
+
+                    {% comment %} <img
+                        src="{% static 'home/images/college-students.jpg' %}"
+                        alt="College Students"
+                        class="about-slide"
+                    > {% endcomment %}
+
+                </div>
+
+                <!-- Previous Button -->
+                <button
+                    type="button"
+                    class="slide-btn prev"
+                    aria-label="Previous image"
+                >
+                    &#10094;
+                </button>
+
+                <!-- Next Button -->
+                <button
+                    type="button"
+                    class="slide-btn next"
+                    aria-label="Next image"
+                >
+                    &#10095;
+                </button>
+
+                <!-- Slide Indicators -->
+                <div class="slide-dots">
+
+                    <button
+                        type="button"
+                        class="slide-dot active"
+                        aria-label="Go to slide 1"
+                    ></button>
+
+                    <button
+                        type="button"
+                        class="slide-dot"
+                        aria-label="Go to slide 2"
+                    ></button>
+
+                    <button
+                        type="button"
+                        class="slide-dot"
+                        aria-label="Go to slide 3"
+                    ></button>
+
+                    {% comment %} <button
+                        type="button"
+                        class="slide-dot"
+                        aria-label="Go to slide 4"
+                    ></button> {% endcomment %}
 
                 </div>
 
             </div>
 
+        </div>
 
-            <!-- CONTENT -->
 
-            <div class="about-content">
+        <!-- ABOUT CONTENT -->
 
-                <span class="section-label">
-                    About Our College
-                </span>
+        <div class="about-content">
 
-                <h2>
-                    A Place Where Education Meets Opportunity
-                </h2>
+            <span class="section-label">
+                About Our College
+            </span>
 
-                <p>
-                    Kherapati Sarkar Group Of Colleges, Indergarh
-                    (Datia), is a prominent educational institution
-                    committed to providing quality and value-based
-                    higher education to students from rural and
-                    semi-urban areas.
-                </p>
+            <h2>
+                A Place Where Education Meets Opportunity
+            </h2>
 
-                <p>
-                    With modern infrastructure, experienced faculty
-                    and a rich academic environment, the institution
-                    continuously works towards the overall development
-                    of students and the creation of a bright future
-                    for the next generation.
-                </p>
+            <p>
+                Kherapati Sarkar Group Of Colleges, Indergarh
+                (Datia), is a prominent educational institution
+                committed to providing quality and value-based
+                higher education to students from rural and
+                semi-urban areas.
+            </p>
 
-                <a href="#contact" class="text-btn">
-                    Learn More →
-                </a>
+            <p>
+                With modern infrastructure, experienced faculty
+                and a rich academic environment, the institution
+                continuously works towards the overall development
+                of students and the creation of a bright future
+                for the next generation.
+            </p>
 
-            </div>
+            <a href="#contact" class="text-btn">
+                Learn More →
+            </a>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
     <!-- =====================================================
@@ -1584,6 +1654,127 @@ I would like to get more information about the college.`;
 
         });
 
+    </script>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const aboutSection = document.querySelector(".about");
+
+        if (!aboutSection) return;
+
+        const slides = aboutSection.querySelectorAll(".about-slide");
+        const prevBtn = aboutSection.querySelector(".slide-btn.prev");
+        const nextBtn = aboutSection.querySelector(".slide-btn.next");
+        const dots = aboutSection.querySelectorAll(".slide-dot");
+        const imageBox = aboutSection.querySelector(".image-box");
+
+        if (!slides.length) return;
+
+        let currentSlide = 0;
+        let slideInterval;
+
+        const delay = 4000;
+
+        function showSlide(index) {
+
+            currentSlide = (index + slides.length) % slides.length;
+
+            slides.forEach((slide, i) => {
+                slide.classList.toggle("active", i === currentSlide);
+            });
+
+            dots.forEach((dot, i) => {
+                dot.classList.toggle("active", i === currentSlide);
+
+                dot.setAttribute(
+                    "aria-current",
+                    i === currentSlide ? "true" : "false"
+                );
+            });
+
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        function startSlideshow() {
+
+            stopSlideshow();
+
+            if (slides.length > 1) {
+                slideInterval = setInterval(nextSlide, delay);
+            }
+
+        }
+
+        function stopSlideshow() {
+
+            clearInterval(slideInterval);
+
+        }
+
+        nextBtn?.addEventListener("click", function () {
+            nextSlide();
+            startSlideshow();
+        });
+
+        prevBtn?.addEventListener("click", function () {
+            prevSlide();
+            startSlideshow();
+        });
+
+        dots.forEach((dot, index) => {
+
+            dot.addEventListener("click", function () {
+                showSlide(index);
+                startSlideshow();
+            });
+
+        });
+
+        // Pause when the mouse is over the slideshow.
+        imageBox.addEventListener("mouseenter", stopSlideshow);
+
+        imageBox.addEventListener("mouseleave", startSlideshow);
+
+        // Pause when the browser tab is hidden.
+        document.addEventListener("visibilitychange", function () {
+
+            if (document.hidden) {
+                stopSlideshow();
+            } else {
+                startSlideshow();
+            }
+
+        });
+
+        // Support keyboard navigation when the slideshow is focused.
+        imageBox.setAttribute("tabindex", "0");
+
+        imageBox.addEventListener("keydown", function (event) {
+
+            if (event.key === "ArrowRight") {
+                nextSlide();
+                startSlideshow();
+            }
+
+            if (event.key === "ArrowLeft") {
+                prevSlide();
+                startSlideshow();
+            }
+
+        });
+
+        showSlide(0);
+        startSlideshow();
+
+    });
     </script>
 
 </body>

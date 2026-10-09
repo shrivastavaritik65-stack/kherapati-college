@@ -179,7 +179,7 @@ textarea {
             rgba(7, 33, 59, 0.78),
             rgba(7, 33, 59, 0.48)
         ),
-        url("https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1800&q=85")
+        url("../images/collegenew.png")
         center / cover no-repeat;
 }
 
@@ -336,8 +336,9 @@ textarea {
 }
 
 
+
 /* =========================================
-   ABOUT
+   ABOUT SECTION
 ========================================= */
 
 .about {
@@ -353,26 +354,136 @@ textarea {
 
 .about-image {
     width: 100%;
-    height: 100%;
+    min-width: 0;
 }
 
 .image-box {
+    position: relative;
     width: 100%;
     height: 450px;
-    min-height: 0;
     border-radius: 18px;
     overflow: hidden;
     background: #f1f5f9;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
 }
 
-.image-box img {
+/* Slideshow Container */
+
+.about-slides {
+    position: relative;
     width: 100%;
     height: 100%;
+}
+
+/* Individual Images */
+
+.about-slide {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
     object-fit: cover;
     object-position: center 40%;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.8s ease,
+        visibility 0.8s ease;
+
     display: block;
 }
+
+.about-slide.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Navigation Arrows */
+
+.slide-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.9);
+    color: #102a43;
+
+    font-size: 18px;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 2;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.slide-btn:hover {
+    background: #1769aa;
+    color: #ffffff;
+}
+
+.slide-btn.prev {
+    left: 15px;
+}
+
+.slide-btn.next {
+    right: 15px;
+}
+
+/* Slide Indicators */
+
+.slide-dots {
+    position: absolute;
+    bottom: 18px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    gap: 9px;
+
+    z-index: 2;
+}
+
+.slide-dot {
+    width: 10px;
+    height: 10px;
+
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.65);
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+.slide-dot.active {
+    background: #ffffff;
+    transform: scale(1.3);
+}
+
+/* Existing About Content */
 
 .about-content h2 {
     font-family: "Playfair Display", serif;
@@ -394,6 +505,66 @@ textarea {
     margin-top: 10px;
 }
 
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 992px) {
+
+    .about-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 35px;
+    }
+
+    .image-box {
+        height: 380px;
+    }
+
+    .about-content h2 {
+        font-size: 36px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .image-box {
+        height: 350px;
+    }
+
+    .about-content h2 {
+        font-size: 32px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .image-box {
+        height: 280px;
+        border-radius: 14px;
+    }
+
+    .slide-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 15px;
+    }
+
+    .slide-btn.prev {
+        left: 10px;
+    }
+
+    .slide-btn.next {
+        right: 10px;
+    }
+
+}
 
 /* =========================================
    VISION
