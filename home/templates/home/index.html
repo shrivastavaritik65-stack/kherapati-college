@@ -271,11 +271,11 @@
                         class="about-slide"
                     >
 
-                    {% comment %} <img
-                        src="{% static 'home/images/college-students.jpg' %}"
+                    <img
+                        src="{% static 'home/images/college15aug.jpeg' %}"
                         alt="College Students"
                         class="about-slide"
-                    > {% endcomment %}
+                    >
 
                 </div>
 
@@ -318,11 +318,11 @@
                         aria-label="Go to slide 3"
                     ></button>
 
-                    {% comment %} <button
+                    <button
                         type="button"
                         class="slide-dot"
                         aria-label="Go to slide 4"
-                    ></button> {% endcomment %}
+                    ></button>
 
                 </div>
 
@@ -454,110 +454,229 @@
 
     </section>
 
+<!-- =====================================================
+     COURSES SECTION
+====================================================== -->
 
-    <!-- =====================================================
-         COURSES
-    ====================================================== -->
+<section class="section courses" id="courses">
 
-    <section class="section courses" id="courses">
+    <div class="container">
 
-        <div class="container">
+        <!-- Section Heading -->
+        <div class="section-heading">
 
-            <div class="section-heading">
+            <span class="section-label">
+                Academic Programs
+            </span>
 
-                <span class="section-label">
-                    Academic Programs
-                </span>
+            <h2>Courses We Offer</h2>
 
-                <h2>
-                    Courses We Offer
-                </h2>
+            <p>
+                Explore undergraduate and postgraduate programs
+                designed to provide strong academic foundations
+                and practical knowledge.
+            </p>
 
-                <p>
-                    Explore undergraduate and postgraduate programs
-                    designed to provide strong academic foundations
-                    and practical knowledge.
-                </p>
+        </div>
 
-            </div>
+        <!-- Courses Grid -->
+        <div class="courses-grid">
 
+            <!-- UNDERGRADUATE -->
+            <div class="course-card">
 
-            <div class="courses-grid">
+                {% comment %} <div class="course-number">01</div>
 
-                <!-- UNDERGRADUATE -->
+                <div class="course-icon">🎓</div> {% endcomment %}
 
-                <div class="course-card">
+                <h3>Undergraduate Programs (UG)</h3>
 
-                    <div class="course-number">
-                        01
-                    </div>
+                {% comment %} <p>
+                    Build a strong foundation for higher education
+                    and professional opportunities.
+                </p> {% endcomment %}
 
-                    <div class="course-icon">
-                        🎓
-                    </div>
+                <div class="course-list">
 
-                    <h3>
-                        Undergraduate Programs
-                    </h3>
+                    <!-- B.A. -->
+                    <div class="course-item">
 
-                    <p>
-                        Build a strong foundation for higher education
-                        and professional opportunities.
-                    </p>
-
-                    <div class="course-list">
-
-                        <span>
+                        <button type="button"
+                                class="course-btn"
+                                aria-expanded="false">
                             B.A.
-                        </span>
+                            <span class="course-arrow">⌄</span>
+                        </button>
 
-                        <span>
+                        <div class="subject-dropdown">
+
+                            <strong>B.A. Subjects</strong>
+
+                            <ul>
+                                <li>Hindi Literature</li>
+                                <li>English Literature</li>
+                                <li>Political Science</li>
+                                <li>History</li>
+                                <li>Economics</li>
+                                <li>Sociology</li>
+                                <li>Geography</li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                    <!-- B.Sc. -->
+                    <div class="course-item">
+
+                        <button type="button"
+                                class="course-btn"
+                                aria-expanded="false">
                             B.Sc.
-                        </span>
+                            <span class="course-arrow">⌄</span>
+                        </button>
 
-                        <span>
+                        <div class="subject-dropdown">
+
+                            <strong>B.Sc. Subjects</strong>
+
+                            <ul>
+                                <li>Physics</li>
+                                <li>Chemistry</li>
+                                <li>Mathematics</li>
+                                <li>Botany</li>
+                                <li>Zoology</li>
+                                <li>Computer Science</li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                    <!-- B.Com. -->
+                    <div class="course-item">
+
+                        <button type="button"
+                                class="course-btn"
+                                aria-expanded="false">
                             B.Com.
-                        </span>
+                            <span class="course-arrow">⌄</span>
+                        </button>
+
+                        <div class="subject-dropdown">
+
+                            <strong>B.Com. Subjects</strong>
+
+                            <ul>
+                                <li>Financial Accounting</li>
+                                <li>Business Economics</li>
+                                <li>Business Law</li>
+                                <li>Business Management</li>
+                                <li>Income Tax</li>
+                                <li>Cost Accounting</li>
+                            </ul>
+
+                        </div>
 
                     </div>
 
                 </div>
 
+            </div>
 
-                <!-- POSTGRADUATE -->
+            <!-- POSTGRADUATE -->
+            <div class="course-card">
 
-                <div class="course-card">
+                {% comment %} <div class="course-number">02</div>
 
-                    <div class="course-number">
-                        02
-                    </div>
+                <div class="course-icon">📚</div> {% endcomment %}
 
-                    <div class="course-icon">
-                        📚
-                    </div>
+                <h3>Postgraduate Programs (PG)</h3>
 
-                    <h3>
-                        Postgraduate Programs
-                    </h3>
+                {% comment %} <p>
+                    Advance your knowledge and expertise through
+                    specialized postgraduate education.
+                </p> {% endcomment %}
 
-                    <p>
-                        Advance your knowledge and expertise through
-                        specialized postgraduate education.
-                    </p>
+                <div class="course-list">
 
-                    <div class="course-list">
+                    <!-- M.A. -->
+                    <div class="course-item">
 
-                        <span>
+                        <button type="button"
+                                class="course-btn"
+                                aria-expanded="false">
                             M.A.
-                        </span>
+                            <span class="course-arrow">⌄</span>
+                        </button>
 
-                        <span>
+                        <div class="subject-dropdown">
+
+                            <strong>M.A. Subjects</strong>
+
+                            <ul>
+                                <li>Hindi Literature</li>
+                                <li>English Literature</li>
+                                <li>Political Science</li>
+                                <li>History</li>
+                                <li>Economics</li>
+                                <li>Sociology</li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                    <!-- M.Sc. -->
+                    <div class="course-item">
+
+                        <button type="button"
+                                class="course-btn"
+                                aria-expanded="false">
                             M.Sc.
-                        </span>
+                            <span class="course-arrow">⌄</span>
+                        </button>
 
-                        <span>
+                        <div class="subject-dropdown">
+
+                            <strong>M.Sc. Subjects</strong>
+
+                            <ul>
+                                <li>Physics</li>
+                                <li>Chemistry</li>
+                                <li>Mathematics</li>
+                                <li>Botany</li>
+                                <li>Zoology</li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                    <!-- PGDCA -->
+                    <div class="course-item">
+
+                        <button type="button"
+                                class="course-btn"
+                                aria-expanded="false">
                             PGDCA
-                        </span>
+                            <span class="course-arrow">⌄</span>
+                        </button>
+
+                        <div class="subject-dropdown">
+
+                            <strong>PGDCA Subjects</strong>
+
+                            <ul>
+                                <li>Computer Fundamentals</li>
+                                <li>Programming in C</li>
+                                <li>Database Management Systems</li>
+                                <li>Operating Systems</li>
+                                <li>Computer Networks</li>
+                                <li>Web Technologies</li>
+                            </ul>
+
+                        </div>
 
                     </div>
 
@@ -567,8 +686,9 @@
 
         </div>
 
-    </section>
+    </div>
 
+</section>
 
     <!-- =====================================================
          FACILITIES
@@ -846,6 +966,9 @@
                         <span class="leader-position">
                             CHAIRMAN
                         </span>
+                        <p>contact: 9826324228</p>
+
+                        <br>
 
                         <p>
                             Leading the institution with a vision
@@ -879,6 +1002,9 @@
                         <span class="leader-position">
                             DIRECTOR
                         </span>
+                        <p>contact: 9827570044</p>
+
+                        <br>
 
                         <p>
                             Inspiring excellence through academic
@@ -912,6 +1038,9 @@
                         <span class="leader-position">
                             PRINCIPAL
                         </span>
+                        <p>contact: 9893892277</p>
+
+                        <br>
 
                         <p>
                             Dedicated to academic excellence and
@@ -981,14 +1110,22 @@
                         📞
                     </div>
 
-                    <h3>
+                    {% comment %} <h3>
                         Phone
                     </h3>
 
                     <p>
                         <a href="tel:9893892277">
                             9893892277
-                        </a>
+                        </a> {% endcomment %}
+                    <h3>
+                        College Reception
+                    </h3>
+
+                    <p>
+                        <a href="tel:9907482405">
+                            9907482405
+                        </a>    
                     </p>
 
                 </div>
@@ -1066,6 +1203,13 @@
 
                             <a href="tel:9893892277">
                                 9893892277
+                            </a>
+                            <strong>
+                                College Reception
+                            </strong>
+
+                            <a href="tel:9907482405">
+                                9907482405
                             </a>
 
                         </div>
@@ -1656,6 +1800,9 @@ I would like to get more information about the college.`;
 
     </script>
 
+    {% comment %} /* =====================================================
+         ABOUT PICTURE SLIDESHOW JAVASCRIPT
+    ====================================================== */ {% endcomment %}
     <script>
     document.addEventListener("DOMContentLoaded", function () {
 
@@ -1777,6 +1924,84 @@ I would like to get more information about the college.`;
     });
     </script>
 
+{% comment %} /*
+    =====================================================
+         COURSE SUBJECT DROPDOWNS JAVASCRIPT
+    ====================================================== */ {% endcomment %}
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const courseItems = document.querySelectorAll(".course-item");
+
+        courseItems.forEach(function (item) {
+
+            const button = item.querySelector(".course-btn");
+
+            button.addEventListener("click", function () {
+
+                const isOpen = item.classList.contains("open");
+
+                // Close all dropdowns first
+                courseItems.forEach(function (otherItem) {
+
+                    otherItem.classList.remove("open");
+
+                    otherItem.querySelector(".course-btn")
+                        .setAttribute("aria-expanded", "false");
+
+                });
+
+                // Open selected dropdown if it was closed
+                if (!isOpen) {
+
+                    item.classList.add("open");
+
+                    button.setAttribute("aria-expanded", "true");
+
+                }
+
+            });
+
+        });
+
+        // Close dropdowns when clicking outside
+        document.addEventListener("click", function (event) {
+
+            if (!event.target.closest(".course-item")) {
+
+                courseItems.forEach(function (item) {
+
+                    item.classList.remove("open");
+
+                    item.querySelector(".course-btn")
+                        .setAttribute("aria-expanded", "false");
+
+                });
+
+            }
+
+        });
+
+        // Close dropdowns with Escape
+        document.addEventListener("keydown", function (event) {
+
+            if (event.key === "Escape") {
+
+                courseItems.forEach(function (item) {
+
+                    item.classList.remove("open");
+
+                    item.querySelector(".course-btn")
+                        .setAttribute("aria-expanded", "false");
+
+                });
+
+            }
+
+        });
+
+    });
+    </script>
 </body>
 
 </html>
